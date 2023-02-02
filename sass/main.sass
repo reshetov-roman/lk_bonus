@@ -1,0 +1,250 @@
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+
+*:before, *:after
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+
+body
+	min-width: 320px
+	position: relative
+	line-height: 1.4
+	font-weight: 400
+	overflow-x: hidden
+	margin: 0
+	height: 100vh
+	font-family: 'Roboto Serif', serif
+	
+p
+	margin: 0
+
+a
+	text-decoration: none
+	outline: none
+	display: inline-block
+	color: #000
+
+img
+	max-width: 100%
+	height: auto
+	vertical-align: bottom
+
+ul li,
+ol li
+	list-style: none
+	display: block
+	margin: 0
+
+span
+	display: inline-block
+
+ul, ol
+	display: block
+	margin: 0
+	padding-left: 0
+
+button
+	outline: none
+	border: 0
+	padding: 0
+	cursor: pointer
+
+h1, h2, h3, h4, h5, h6
+	margin: 0
+	font-weight: normal
+
+strong
+	display: inline-block
+
+.site-wrap
+	overflow: hidden
+.container
+	margin: 0 auto
+	position: relative
+	padding: 0 15px
+	max-width: 1230px
+	width: 100%
+
+//ColorVariables
+$colorBg1: #FAFAFA
+$colorBg2: #fff
+$colorButton: #EFEFF0
+$colorError: #FF392E
+$colorFrame: #EBEBF0
+$colorSite: #0100D3
+$colorTxt: #C5C5C7
+$colorBlue: #2F80ED
+$colorDark: #7B828A
+$colorGreen: #30DB5B
+$colorBlack: #262626
+$colorOrange: #F15A2C
+
+
+
+.page-bonus
+	padding-left: 40px
+	&-title
+		margin-top: 25px
+		font-size: 24px
+		font-weight: 500
+	&-wrapper
+		margin-top: 25px
+		&__bonus-count
+			margin-bottom: 25px
+			strong
+				display: inline-block
+				font-size: 16px
+		&__bonus-int
+			position: relative
+			background-color: $colorOrange
+			color: #fff
+			font-weight: 300
+			border-radius: 30px
+			margin-left: 10px
+			padding: 0 8px
+			&:after
+				content: url(../img/bonus_img.png)
+				position: relative
+				top: 2px
+				right: -3px
+		&__list
+			min-width: 790px
+			&--scroll
+				overflow-x: auto
+			&--subtitle
+				position: relative
+				display: block
+				padding-top: 30px
+				&::before
+					content: ''
+					position: absolute
+					top: 0
+					width: 100%
+					height: 5px
+					border-radius: 5px
+					background: $colorFrame
+			&--rows
+				display: flex
+				justify-content: space-between
+				margin-top: 30px
+				padding-bottom: 5px
+				position: relative
+				&:last-child
+					border-bottom: 1px solid $colorFrame
+					padding-bottom: 15px
+			&--line
+				position: absolute
+				top: 28px
+				height: 1px
+				background: $colorFrame
+				width: 100%
+			&--data-mobile
+				// display: none
+			&--column
+				color: $colorTxt
+				font-size: 16px
+				&:last-child
+					padding-right: 10%
+			&--title
+				margin-bottom: 25px
+			&--status
+				width: 90.5px
+				span
+					position: relative
+					font-size: 12px
+					padding: 3px 15px 3px 10px
+					border-radius: 15px
+					&.status-completed
+						color: #fff
+						background-color: $colorGreen
+						&::after
+							content: url('../img/completed.png')
+							position: relative
+							left: 5px
+							top: 2.8px
+					&.not-status-completed
+						background-color: $colorFrame
+						color: $colorBlack
+						&::after
+							content: url('../img/no-completed.png')
+							position: relative
+							left: 5px
+							top: 1.8px
+			&--date,
+			&--transaction,
+			&--price
+				color: $colorBlack
+			&--int
+				font-size: 20px
+			&--accrued
+				font-size: 20px
+				color: $colorOrange
+			&--date-mobile
+				display: none
+				font-size: 12px
+				color: $colorTxt
+
+
+@media screen and (max-width: 479px)
+	.page-bonus-title
+		text-align: center
+	.page-bonus-wrapper__list--subtitle
+		padding-top: 20px
+	.page-bonus-wrapper__list--title
+		opacity: 0
+		height: 0
+	.page-bonus-wrapper__list--line
+		top: 10px
+	.page-bonus-wrapper__list--rows:first-child
+		margin-top: 0
+	.page-bonus-wrapper__list--status
+		width: auto
+	.page-bonus-wrapper__list--status span
+		font-size: 0
+		padding: 4px 10px
+	.page-bonus-wrapper__list--status span.not-status-completed
+		background-color: #7B828A
+	.page-bonus-wrapper__list--status span.status-completed::after
+		left: 1px
+		top: 0
+	.page-bonus-wrapper__list--status span.not-status-completed::after
+		content: url('../img/no-completed_white.png')
+		left: 1px
+		top: 1px
+	.page-bonus-wrapper__list--column:nth-child(3)
+		position: absolute
+		left: 52px
+		font-size: 12px
+	.page-bonus-wrapper__list--date
+		color: $colorTxt
+		position: absolute
+		top: 47px
+		display: none
+	.page-bonus-wrapper__list--scroll
+		overflow-x: unset
+	.page-bonus-wrapper__list
+		min-width: unset
+	.page-bonus-wrapper__list--column:last-child
+		padding-right: 0
+	.page-bonus-wrapper__list--date-mobile
+		display: block
+				
